@@ -2,37 +2,37 @@
 // Dogecoin BIP32 is a proposed standard: https://bitcointalk.org/index.php?topic=409731
 
 module.exports = {
-  bitcoin: {
-    messagePrefix: '\x18Bitcoin Signed Message:\n',
-    bech32: 'bc',
+  tuxcoin: {
+    messagePrefix: '\x19Tuxcoin Signed Message:\n',
+    bech32: 'tux',
     bip32: {
-      public: 0x0488b21e,
-      private: 0x0488ade4
+      public: 0x0488ADE4,
+      private: 0x0488B21E
     },
-    pubKeyHash: 0x00,
-    scriptHash: 0x05,
-    wif: 0x80
+    pubKeyHash: 0x41,
+    scriptHash: 0x40,
+    wif: 0xc1
   },
   regtest: {
-    messagePrefix: '\x18Bitcoin Signed Message:\n',
-    bech32: 'bcrt',
+    messagePrefix: '\x19Tuxcoin Signed Message:\n',
+    bech32: 'rtux',
     bip32: {
       public: 0x043587cf,
       private: 0x04358394
     },
     pubKeyHash: 0x6f,
-    scriptHash: 0xc4,
-    wif: 0xef
+    scriptHash: 0x3a,
+    wif: 0xc1
   },
   testnet: {
-    messagePrefix: '\x18Bitcoin Signed Message:\n',
-    bech32: 'tb',
+    messagePrefix: '\x19Tuxcoin Signed Message:\n',
+    bech32: 'ttux',
     bip32: {
-      public: 0x043587cf,
+      public: 0x043587CF,
       private: 0x04358394
     },
     pubKeyHash: 0x6f,
-    scriptHash: 0xc4,
+    scriptHash: 0x3a,
     wif: 0xef
   }
 }
