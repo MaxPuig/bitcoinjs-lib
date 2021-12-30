@@ -1,35 +1,36 @@
 // https://en.bitcoin.it/wiki/List_of_address_prefixes
 // Dogecoin BIP32 is a proposed standard: https://bitcointalk.org/index.php?topic=409731
+// https://github.com/GarlicoinOrg/Garlicoin/blob/master/src/chainparams.cpp
 
 module.exports = {
-  tuxcoin: {
-    messagePrefix: '\x19Tuxcoin Signed Message:\n',
-    bech32: 'tux',
+  garlicoin: {
+    messagePrefix: '\x19Garlicoin Signed Message:\n',//
+    bech32: 'grlc',
     bip32: {
-      public: 0x0488ADE4,
-      private: 0x0488B21E
+      public: 0x0488b21e,
+      private: 0x0488ade4
     },
-    pubKeyHash: 0x41,
-    scriptHash: 0x40,
-    wif: 0xc1
+    pubKeyHash: 0x26,
+    scriptHash: 0x32,
+    wif: 0xb0
   },
   regtest: {
-    messagePrefix: '\x19Tuxcoin Signed Message:\n',
-    bech32: 'rtux',
+    messagePrefix: '\x19Garlicoin Signed Message:\n',
+    bech32: 'rgrlc',
     bip32: {
-      public: 0x043587cf,
-      private: 0x04358394
+      public: 0x0488b21e,
+      private: 0x0488ade4
     },
     pubKeyHash: 0x6f,
     scriptHash: 0x3a,
-    wif: 0xc1
+    wif: 0xef
   },
   testnet: {
-    messagePrefix: '\x19Tuxcoin Signed Message:\n',
-    bech32: 'ttux',
+    messagePrefix: '\x19Garlicoin Signed Message:\n',
+    bech32: 'tgrlc',
     bip32: {
-      public: 0x043587CF,
-      private: 0x04358394
+      public: 0x0488b21e,
+      private: 0x0488ade4
     },
     pubKeyHash: 0x6f,
     scriptHash: 0x3a,
