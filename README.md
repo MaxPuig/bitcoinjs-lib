@@ -1,16 +1,12 @@
-# BitcoinJS (bitcoinjs-lib)
-[![Build Status](https://travis-ci.org/bitcoinjs/bitcoinjs-lib.png?branch=master)](https://travis-ci.org/bitcoinjs/bitcoinjs-lib)
-[![NPM](https://img.shields.io/npm/v/bitcoinjs-lib.svg)](https://www.npmjs.org/package/bitcoinjs-lib)
+# GarlicoinJS [Fork from BitcoinJS (bitcoinjs-lib)]
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
-A javascript Bitcoin library for node.js and browsers.
+A javascript Garlicoin library for node.js and browsers.
 
 Released under the terms of the [MIT LICENSE](LICENSE).
 
 ## Should I use this in production?
 If you are thinking of using the *master* branch of this library in production, **stop**.
-Master is not stable; it is our development branch, and [only tagged releases may be classified as stable](https://github.com/bitcoinjs/bitcoinjs-lib/tags).
+Master is not stable; it is our development branch, and [only tagged releases may be classified as stable](https://github.com/MaxPuig/bitcoinjs-lib/tags).
 
 
 ## Can I trust this code?
@@ -18,7 +14,7 @@ Master is not stable; it is our development branch, and [only tagged releases ma
 
 We recommend every user of this library and the [bitcoinjs](https://github.com/bitcoinjs) ecosystem audit and verify any underlying code for its validity and suitability,  including reviewing any and all of your project's dependencies.
 
-Mistakes and bugs happen, but with your help in resolving and reporting [issues](https://github.com/bitcoinjs/bitcoinjs-lib/issues), together we can produce open source software that is:
+Mistakes and bugs happen, but with your help in resolving and reporting [issues](https://github.com/MaxPuig/bitcoinjs-lib/issues), together we can produce open source software that is:
 
 - Easy to audit and verify,
 - Tested, with test coverage >95%,
@@ -28,12 +24,12 @@ Mistakes and bugs happen, but with your help in resolving and reporting [issues]
 
 
 ## Documentation
-Presently,  we do not have any formal documentation other than our [examples](#examples), please [ask for help](https://github.com/bitcoinjs/bitcoinjs-lib/issues/new) if our examples aren't enough to guide you.
+Presently,  we do not have any formal documentation other than our [examples](#examples), please [ask for help in the Garlicoin Discord Server](https://discord.gg/hxR8wD6) if our examples aren't enough to guide you.
 
 
 ## Installation
 ``` bash
-npm install bitcoinjs-lib
+npm install garlicoinjs-lib
 ```
 
 Typically we support the [Node Maintenance LTS version](https://github.com/nodejs/Release).
@@ -70,7 +66,7 @@ We are not an authorative source of best practice, but, at the very least:
 
 
 ### Browser
-The recommended method of using `bitcoinjs-lib` in your browser is through [Browserify](https://github.com/substack/node-browserify).
+The recommended method of using `garlicoinjs-lib` in your browser is through [Browserify](https://github.com/substack/node-browserify).
 If you're familiar with how to use browserify, ignore this and carry on, otherwise, it is recommended to read the tutorial at https://browserify.org/.
 
 **NOTE**: We use Node Maintenance LTS features, if you need strict ES5, use [`--transform babelify`](https://github.com/babel/babelify) in conjunction with your `browserify` step (using an [`es2015`](https://babeljs.io/docs/plugins/preset-es2015/) preset).
@@ -104,43 +100,47 @@ flow-typed install -f 0.27 bitcoinjs-lib@2.2.0
 
 
 ## Examples
+`Examples have NOT been updated for garlicoin`. 
+- Make sure you use `networks.garlicoin` instead of `networks.bitcoin`. 
+- The examples import the library as `const bitcoin = require('bitcoinjs-lib');`, use `const garlicoin = require('garlicoinjs-lib')` instead.
+
 The below examples are implemented as integration tests, they should be very easy to understand.
 Otherwise, pull requests are appreciated.
 Some examples interact (via HTTPS) with a 3rd Party Blockchain Provider (3PBP).
 
-- [Generate a random address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Import an address via WIF](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Generate a 2-of-3 P2SH multisig address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Generate a SegWit address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Generate a SegWit P2SH address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Generate a SegWit 3-of-4 multisig address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Generate a SegWit 2-of-2 P2SH multisig address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Support the retrieval of transactions for an address (3rd party blockchain)](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Generate a Testnet address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Generate a Litecoin address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/addresses.js)
-- [Create a 1-to-1 Transaction](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Create a 2-to-2 Transaction](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Create (and broadcast via 3PBP) a typical Transaction](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Create (and broadcast via 3PBP) a Transaction with an OP\_RETURN output](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Create (and broadcast via 3PBP) a Transaction with a 2-of-4 P2SH(multisig) input](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Create (and broadcast via 3PBP) a Transaction with a SegWit P2SH(P2WPKH) input](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Create (and broadcast via 3PBP) a Transaction with a SegWit P2WPKH input](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Create (and broadcast via 3PBP) a Transaction with a SegWit P2PK input](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Create (and broadcast via 3PBP) a Transaction with a SegWit 3-of-4 P2SH(P2WSH(multisig)) input](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Verify a Transaction signature](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/transactions.js)
-- [Import a BIP32 testnet xpriv and export to WIF](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/bip32.js)
-- [Export a BIP32 xpriv, then import it](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/bip32.js)
-- [Export a BIP32 xpub](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/bip32.js)
-- [Create a BIP32, bitcoin, account 0, external address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/bip32.js)
-- [Create a BIP44, bitcoin, account 0, external address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/bip32.js)
-- [Create a BIP49, bitcoin testnet, account 0, external address](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/bip32.js)
-- [Use BIP39 to generate BIP32 addresses](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/bip32.js)
-- [Create (and broadcast via 3PBP) a Transaction where Alice can redeem the output after the expiry (in the past)](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/cltv.js)
-- [Create (and broadcast via 3PBP) a Transaction where Alice can redeem the output after the expiry (in the future)](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/cltv.js)
-- [Create (and broadcast via 3PBP) a Transaction where Alice and Bob can redeem the output at any time](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/cltv.js)
-- [Create (but fail to broadcast via 3PBP) a Transaction where Alice attempts to redeem before the expiry](https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/test/integration/cltv.js)
+- [Generate a random address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Import an address via WIF](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Generate a 2-of-3 P2SH multisig address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Generate a SegWit address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Generate a SegWit P2SH address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Generate a SegWit 3-of-4 multisig address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Generate a SegWit 2-of-2 P2SH multisig address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Support the retrieval of transactions for an address (3rd party blockchain)](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Generate a Testnet address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Generate a Litecoin address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/addresses.js)
+- [Create a 1-to-1 Transaction](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Create a 2-to-2 Transaction](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Create (and broadcast via 3PBP) a typical Transaction](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Create (and broadcast via 3PBP) a Transaction with an OP\_RETURN output](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Create (and broadcast via 3PBP) a Transaction with a 2-of-4 P2SH(multisig) input](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Create (and broadcast via 3PBP) a Transaction with a SegWit P2SH(P2WPKH) input](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Create (and broadcast via 3PBP) a Transaction with a SegWit P2WPKH input](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Create (and broadcast via 3PBP) a Transaction with a SegWit P2PK input](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Create (and broadcast via 3PBP) a Transaction with a SegWit 3-of-4 P2SH(P2WSH(multisig)) input](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Verify a Transaction signature](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/transactions.js)
+- [Import a BIP32 testnet xpriv and export to WIF](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/bip32.js)
+- [Export a BIP32 xpriv, then import it](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/bip32.js)
+- [Export a BIP32 xpub](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/bip32.js)
+- [Create a BIP32, bitcoin, account 0, external address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/bip32.js)
+- [Create a BIP44, bitcoin, account 0, external address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/bip32.js)
+- [Create a BIP49, bitcoin testnet, account 0, external address](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/bip32.js)
+- [Use BIP39 to generate BIP32 addresses](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/bip32.js)
+- [Create (and broadcast via 3PBP) a Transaction where Alice can redeem the output after the expiry (in the past)](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/cltv.js)
+- [Create (and broadcast via 3PBP) a Transaction where Alice can redeem the output after the expiry (in the future)](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/cltv.js)
+- [Create (and broadcast via 3PBP) a Transaction where Alice and Bob can redeem the output at any time](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/cltv.js)
+- [Create (but fail to broadcast via 3PBP) a Transaction where Alice attempts to redeem before the expiry](https://github.com/MaxPuig/bitcoinjs-lib/blob/master/test/integration/cltv.js)
 
-If you have a use case that you feel could be listed here, please [ask for it](https://github.com/bitcoinjs/bitcoinjs-lib/issues/new)!
+If you have a use case that you feel could be listed here, please [ask for it](https://github.com/MaxPuig/bitcoinjs-lib/issues/new)!
 
 
 ## Contributing
@@ -148,7 +148,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 
 ### Running the test suite
-
+`Tests have not been updated for garlicoin`. In case you wanted to use tests, make sure you use `networks.garlicoin` instead of `networks.bitcoin`.
 ``` bash
 npm test
 npm run-script coverage

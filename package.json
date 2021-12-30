@@ -1,6 +1,6 @@
 {
   "name": "garlicoinjs-lib",
-  "version": "4.0.2",
+  "version": "1.0.0",
   "description": "Client-side Garlicoin JavaScript library",
   "main": "./src/index.js",
   "engines": {

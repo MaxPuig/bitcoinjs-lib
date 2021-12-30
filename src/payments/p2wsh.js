@@ -5,7 +5,7 @@ const OPS = require('bitcoin-ops')
 const bech32 = require('bech32')
 const bcrypto = require('../crypto')
 const bscript = require('../script')
-const BITCOIN_NETWORK = require('../networks').bitcoin
+const GARLICOIN_NETWORK = require('../networks').garlicoin
 
 const EMPTY_BUFFER = Buffer.alloc(0)
 
@@ -61,7 +61,7 @@ function p2wsh (a, opts) {
 
   let network = a.network
   if (!network) {
-    network = (a.redeem && a.redeem.network) || BITCOIN_NETWORK
+    network = (a.redeem && a.redeem.network) || GARLICOIN_NETWORK
   }
 
   const o = { network }

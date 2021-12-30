@@ -4,7 +4,7 @@ const OPS = require('bitcoin-ops')
 
 const bcrypto = require('../crypto')
 const bscript = require('../script')
-const BITCOIN_NETWORK = require('../networks').bitcoin
+const GARLICOIN_NETWORK = require('../networks').garlicoin
 const bs58check = require('bs58check')
 
 function stacksEqual (a, b) {
@@ -47,7 +47,7 @@ function p2sh (a, opts) {
 
   let network = a.network
   if (!network) {
-    network = (a.redeem && a.redeem.network) || BITCOIN_NETWORK
+    network = (a.redeem && a.redeem.network) || GARLICOIN_NETWORK
   }
 
   const o = { network }
