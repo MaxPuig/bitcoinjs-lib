@@ -1,4 +1,4 @@
-# GarlicoinJS [Fork from BitcoinJS (bitcoinjs-lib)]
+# GarlicoinJS [Fork from bitcoinjs-lib]
 
 A javascript Garlicoin library for node.js and browsers.
 

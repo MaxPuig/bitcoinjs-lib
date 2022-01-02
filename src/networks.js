@@ -18,8 +18,8 @@ module.exports = {
     messagePrefix: '\x19Garlicoin Signed Message:\n',
     bech32: 'rgrlc',
     bip32: {
-      public: 0x0488b21e,
-      private: 0x0488ade4
+      public: 0x043587cf,
+      private: 0x04358394
     },
     pubKeyHash: 0x6f,
     scriptHash: 0x3a,
@@ -29,8 +29,8 @@ module.exports = {
     messagePrefix: '\x19Garlicoin Signed Message:\n',
     bech32: 'tgrlc',
     bip32: {
-      public: 0x0488b21e,
-      private: 0x0488ade4
+      public: 0x043587cf,
+      private: 0x04358394
     },
     pubKeyHash: 0x6f,
     scriptHash: 0x3a,
